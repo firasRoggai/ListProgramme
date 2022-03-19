@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+// first exersice function
 int somme (int n){
  int s=0,i;
  for(i=1;i<=n;i++)
  s=s+i;
  return(s);
  }
+ // secound exersice function
 float puiss(float x,int n){
 int i;
 float p=1;
@@ -21,6 +23,27 @@ else {
  return(1/p);
  }
 }
+// third exersice function
+float centi (float df)
+{
+return(5*(df-32)/9) ;
+}
+int bisse(int a)
+{ if ((a %4)==0)
+ return(1);
+ else
+ return (0);
+}
+// fourthbb exersice function
+int fact(int n)
+{
+int i,f;
+f=1;
+for(i=2;i<=n;i++)
+ f=f*i;
+return(f);
+}
+// main programme
 int main()
 {
     int choix;
@@ -30,12 +53,18 @@ int main()
     // exercise 2 variables
     float x;
     int s;
+    // exercise 3 variables
+    float df;
+    // exercise 4 variables
+    int an;
     do { system("cls");system("COLOR 02") ;
     printf("----------------------------------------\n");
     printf("----------Menu Principal ----------------\n");
     printf("-----------------------------------------\n");
     printf("----------/1: exercice 1 ----------------\n");
     printf("----------/2: exercice 2 ----------------\n");
+    printf("----------/3: exercice 3 ----------------\n");
+    printf("----------/4: exercice 4 ----------------\n");
     printf("----------------------------------------\n");
     printf("donne votre choix \n");
     scanf("%d",&choix);
@@ -54,7 +83,20 @@ int main()
             printf("cas impossible") ;
             else{printf("%f à la puissance %d = %.2f", x, s ,puiss(x,s));}
             break;
-
+        case 3:
+            printf("donner les degres en Fahrenheit ");
+            scanf("%f",&df);
+            printf("les degés en centigrades = %.2f,centi(df)");
+            break;
+        case 4:
+            printf("donner l'annee ");
+            scanf("%d",&an);
+            if(bisse(an) !=0)
+                printf("l'annee est bissextile");
+            else{
+                    printf("l'annee n'est pas bissextile");
+            }
+        break;
         // operator doesn't match any case constant +, -, *, /
         default:
             printf("Error! operator is not correct");
